@@ -1,0 +1,244 @@
+* {
+    box-sizing: border-box;
+    }
+    
+    body {
+        position: relative; /* устанавливаем позицию для псевдоэлемента */
+    }
+    
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('fon.png');
+        background-size: cover;
+        filter: blur(5px); /* применяем размытие к фоновому изображению */
+        z-index: -1; /* помещаем псевдоэлемент под основной контент */
+    }
+    
+    header {
+    background-color: #804d85;
+    padding: 10px 0;
+    text-align: center;
+    height: 150px;
+    }
+    .log{
+        margin-right: 30px;
+    height: 90px;
+    width: 90px;
+    }
+    .logo {
+        height: 80px;
+        width: 400px;
+    }
+    
+    nav{background: #413f3c;}
+    nav ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    nav ul::after{
+        content: '';
+        display: table;
+        clear: both;
+    }
+    nav a{
+        text-decoration: none;
+        display: block;
+        transition: .3s linear;
+    }
+    .topmenu > li{
+    float: left;
+    position: relative;
+    border-left: 1px solid black;
+    }
+    .topmenu > li:first-child{border-left: 0;}
+    .topmenu > li > a{
+        padding: 20px 30px;
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #ffefda;
+        letter-spacing: 2px;
+    }
+    .topmenu > li > a.active,
+    .submenu a:hover{color: #cf55e2;}
+    .submenu{
+        position: absolute;
+        min-width: 200px;
+        background: rgb(255, 248, 237);
+        border-top: 1px solid #804582;
+        border-left: 1px solid #804582;
+        border-right: 1px solid #804582;
+        visibility: hidden;
+        opacity: 0;
+        transform-origin: 0% 0%;
+        transform: rotateX(-90deg);
+        transition: .3s linear;
+    }
+    .submenu li{position: relative;}
+    .submenu li a{
+        color: #e6be85;
+        padding: 10px 20px;
+        font-size: 15px;
+        border-bottom: 1px solid #804582;
+    }
+   
+    nav li:hover > .submenu{
+        transform: rotateX(0deg);
+        visibility: visible;
+        opacity: 1;
+        
+    }
+    
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
+.product {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #5B2C6F;
+    border-radius: 5px;
+    background-color: #fbf6e8;
+    transition: transform 0.3s;
+    height: 30%;
+    width: 30%;
+}
+
+.product:hover {
+    transform: scale(1.1);
+}
+
+.product img {
+    width: 100%;
+}
+
+.contact {
+    margin-top: 100%;
+    text-align: center;
+    background-color: #804d85;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h2 {
+    color: #b48c64;
+}
+
+p {
+    color: #d3ab8c;
+}
+
+@media only screen and (max-width: 500px) {
+    /* стили для мобильных устройств */
+    body {
+        font-size: 14px;
+    }
+    .container {
+        width: 100%;
+    }
+    .nav {
+        display: none;
+    }
+    .topmenu > li > a{
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #ffefda;
+        letter-spacing: 2px;
+    }
+
+h2 {
+    color: #b48c64;
+    font-size: 16px;
+}
+
+p {
+    color: #d3ab8c;
+}
+.log{
+    margin-right: 30px;
+height: 70px;
+width: 70px;
+}
+.logo {
+    height: 60px;
+    width: 200px;
+}
+
+}
+@media only screen and (max-width: 1200px) {
+    /* стили для мобильных устройств */
+    body {
+        font-size: 18px;
+    }
+    .container {
+        width: 100%;
+    }
+    .menu {
+        display: none;
+    }
+    .contact {
+        margin-top: 100%;
+        text-align: center;
+        background-color: #804d85;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+}
+@media only screen and (max-width: 720px) {
+    /* стили для мобильных устройств */
+    body {
+        font-size: 14px;
+    }
+    .container {
+        width: 100%;
+    }
+    .nav {
+        display: none;
+    }
+    .topmenu > li > a{
+        padding: 10px 20px;
+        font-size: 15px;
+        text-transform: uppercase;
+        color: #ffefda;
+        letter-spacing: 2px;
+    }
+
+h2 {
+    color: #b48c64;
+    font-size: 16px;
+}
+
+p {
+    color: #d3ab8c;
+}
+.log{
+    margin-right: 30px;
+height: 70px;
+width: 70px;
+}
+.logo {
+    height: 60px;
+    width: 200px;
+}
+}
